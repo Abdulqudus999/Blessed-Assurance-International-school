@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+
+.animate-text-gradient {
+  background-size: 300%; /* Adjust as needed for desired gradient movement */
+  animation: animatedgradient 6s ease infinite alternate;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animation*/
+
+@keyframes animate-fade-left {
+  0%{
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes animate-fade-top {
+  0%{
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes animate-fade-bottom {
+  0%{
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes animate-scale {
+  0%{
+    transform: scale(1);
+  
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.swiper-btn:after {
+  display: none;
+}
+
+.swiper-btn {
+  position: absolute;
+  top: 75% !important;
+  left:  8% !important;
+  font-size: 2.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  color: white !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  transition: 0.3s;
+
+}
+.swiper-btn:hover {
+  background-color: white;
+  color: black !important;
+}
+.swiper-next {
+  top: 84% !important;
+}
+
+.hero-content span{
+  opacity: 0;
+  animation: animate-fade-top 0.8s forwards linear;
+}
+.hero-content h1{
+  opacity: 0;
+  animation: animate-fade-left 0.3s forwards linear;
+}
+.hero-content p{
+  opacity: 0;
+  animation: animate-fade-bottom 1s forwards linear;
+}
+.hero-content p:first-child{
+  opacity: 0;
+  animation: animate-fade-bottom 0.8s forwards linear;
+}
+.hero-content button{
+  opacity: 0;
+  animation: animate-fade-bottom 1.3s forwards linear;
+}
+
+@media (max-width: 991px) {
+  .swiper-btn{
+    top: 85% !important;
+    left: 5% !important;
+  }
+  .swiper-next{
+    left: 90% !important;
+  }
+  .side-menu {
+    position: absolute !important;
+    top: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    background-color: rgb(245, 216, 85);
+    padding: 0 12%;
+  }
+  .side-menu .menu li{
+    margin: 5px 0;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee8e8;
+    color: black;
+    font-size: 1rem;
+  }
+}
+
+@keyframes anim-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: anim-marquee 25s forwards infinite;
+  display: flex;
+  width: fit-content;
+}
